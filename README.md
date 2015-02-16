@@ -10,7 +10,7 @@
 The solution file contains several things:
 
 1. JobRunnerShell - simple wrapper class that handles some of the basic management of the process/job for Azure Web Job Classes/Assemblies
-2. TcpPing - an implementation of a simple Azure Web Job - intended to be run continuously - that will do a basic TcpPing (open a socket) every second.
+2. TcpPing - an implementation of a simple Azure Web Job - intended to be run continuously - that will do a basic TcpPing (open a socket) every second by default (adjust in app.config).
 3. SimpleTcpServer - a very basic Tcp Listener service that echos back a simple string (1 line) in reverse.
 
 
@@ -49,6 +49,8 @@ The following settings are used to open the socket - adjust to your need.
     <appSettings>
       <add key="sqlIp" value="10.3.0.4"/>
       <add key="sqlPort" value="8999"/>
+      <add key="loopReportCount" value="50"/>
+      <add key="loopDelayMS" value="5000"/>
     </appSettings>
     
 
