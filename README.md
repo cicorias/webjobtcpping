@@ -1,5 +1,9 @@
 # Azure Web Job - TCP Ping #
 ---
+
+### Links ###
+  * [Quick Setup](QuickSetup.md) - shows a quick deployment and some examples of logging via the Application Logs
+
 ## Overview ##
 ### Visual Studio 2013 Solution ###
 The solution file contains several things:
