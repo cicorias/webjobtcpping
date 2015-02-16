@@ -3,7 +3,7 @@
 
 ----------
 
-The intent of this Job is to be used only for troubleshooting as the logging level by default is Error - this is to make the deployment of the job easy and least configuration.  The job isn't necessarily something to be used normally.  If you need to, you can tone down the logging my modification of the code.
+The intent of this Job is to be used only for troubleshooting. Ensure to see all messages you adjust the logging level on the Azure WebSite to Informational.  The job isn't necessarily something to be used normally.  If you need to, you can tone down the logging my modification of the code.
 
 ## Azure Web Site Configuration ##
 

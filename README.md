@@ -3,13 +3,14 @@
 
 ### Links ###
   * [Quick Setup](QuickSetup.md) - shows a quick deployment and some examples of logging via the Application Logs
+  * [Deploy Simple TCP Server](SimpleTcpServer.md)
 
 ## Overview ##
 ### Visual Studio 2013 Solution ###
 The solution file contains several things:
 
 1. JobRunnerShell - simple wrapper class that handles some of the basic management of the process/job for Azure Web Job Classes/Assemblies
-2. TcpPing - an implementation of a simple Azure Web Job - intended to be run continously - that will do a basic TcpPing (open a socket) every second.
+2. TcpPing - an implementation of a simple Azure Web Job - intended to be run continuously - that will do a basic TcpPing (open a socket) every second.
 3. SimpleTcpServer - a very basic Tcp Listener service that echos back a simple string (1 line) in reverse.
 
 
