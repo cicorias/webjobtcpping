@@ -24,7 +24,9 @@ namespace TcpPing
 
             string ip;
             int portInt;
-            GetArguments(out ip, out portInt);
+            int loopReportCount;
+            int loopDelayMS;
+            GetArguments(out ip, out portInt, out loopDelayMS, out loopReportCount);
 
             int i = 0;
             try
@@ -33,7 +35,7 @@ namespace TcpPing
                 {
                     s_totalCalls++;
 
-                    if (i % 10 == 0)
+                    if (i % loopReportCount == 0)
                     {
                         Helper.LogMessage(
                             string.Format("in loop at {0} ...", i.ToString()),
@@ -46,7 +48,7 @@ namespace TcpPing
                     }
 
                     PingPort(ip, portInt, writer);
-                    Thread.Sleep(1000);
+                    Thread.Sleep(loopDelayMS);
                     i++;
                 }
 
@@ -77,11 +79,11 @@ namespace TcpPing
                 s_totalCalls,
                 s_totalErrors,
                 totalTimeMsg);
-            
+
             return longMessage;
         }
 
-        private static void GetArguments(out string ip, out int portInt)
+        private static void GetArguments(out string ip, out int portInt, out int loopDelayMs, out int loopReportCount)
         {
             var port = ConfigurationManager.AppSettings["sqlPort"];
             ip = ConfigurationManager.AppSettings["sqlIp"];
@@ -97,6 +99,21 @@ namespace TcpPing
 
             if (!portParse)
                 throw new ArgumentException("bad format for port", "sqlPort");
+
+
+            //Loop stuff
+            var loopDelayMsStr = ConfigurationManager.AppSettings["loopDelayMS"];
+
+            if (!int.TryParse(loopDelayMsStr, out loopDelayMs))
+                loopDelayMs = 1000;
+
+            var loopReportCountStr = ConfigurationManager.AppSettings["loopReportCount"];
+
+            if (!int.TryParse(loopReportCountStr, out loopReportCount))
+                loopReportCount = 10;
+
+
+
         }
 
 
