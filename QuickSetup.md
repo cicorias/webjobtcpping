@@ -47,9 +47,12 @@ During the job run the logs will be shown normally as errors - this is just a di
   * Streaming Logs
   * Streaming Logs - showing error
  
-
+#### Normal logging ####
 ![](images/loggingnormal.jpg?raw=true)
 
+#### Portal Logging ####
 ![](images/loggingportal.jpg?raw=true)
 
-![](images/loggingerror.jpg?raw=true)
+
+#### Error showing Socket Exception ####
+![](images/logerror.jpg?raw=true)
