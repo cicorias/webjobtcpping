@@ -5,8 +5,8 @@
 
 The Simple TCP Server is a Console application that can also run as a Windows Service.
 
-  * Run from Command line
-  * Run as a Windows Service
+  * [Run from Command line](#run-from-a-command-line)
+  * [Run as a Windows Service](#install-as-a-windows-service)
 
 ### Deployment and Optional Service Install ###
 
