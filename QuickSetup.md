@@ -3,7 +3,7 @@
 
 ----------
 
-The intent of this Job is to be used only for troubleshooting. Ensure to see all messages you adjust the logging level on the Azure WebSite to Informational.  The job isn't necessarily something to be used normally.  If you need to, you can tone down the logging my modification of the code.
+The intent of this Job is to be used only for troubleshooting. Ensure to see all messages you adjust the logging level on the Azure WebSite to Informational.  The job isn't necessarily something to be used normally.  If you need to, you can tone down the logging through modification of the code.
 
 ## Azure Web Site Configuration ##
 
@@ -34,7 +34,7 @@ The intent of this Job is to be used only for troubleshooting. Ensure to see all
 ### 3.	Monitor the Job ###
 The job can be monitored via:
 
-  * https://<SITENAME>.scm.azurewebsites.net/azurejobs/#/jobs
+  * https://**SITENAME**.scm.azurewebsites.net/azurejobs/#/jobs
   * Streaming Logs
   * Blob Storage
 

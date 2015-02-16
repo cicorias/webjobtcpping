@@ -3,7 +3,7 @@
 
 ### Links ###
   * [Quick Setup](QuickSetup.md) - shows a quick deployment and some examples of logging via the Application Logs
-  * [Deploy Simple TCP Server](SimpleTcpServer.md)
+  * [Deploy Simple TCP Server](SimpleTcpServer.md)  - simple TCP listener that just echos back a single line in reverse and closes the socket.
 
 ## Overview ##
 ### Visual Studio 2013 Solution ###
@@ -20,9 +20,11 @@ The intent of the solution is to provide a very basic diagnostic tool that can b
 
 This can be used against any Server listener service - as it only does a Socket.Open() - of course, the Server should be resilient to these Socket Opens and immediate close.
 
-**NOTE:** **`Make sure you Open the Windows Server firewall if using Windows Server as your 'host' for this.`*
+##### NOTE #####
+   * ***Make sure you Open the Windows Server firewall if using Windows Server as your 'host' for this.***
 
-Reporting is done to the Azure Web Jobs dashboard and is also visible via Azure WebSite's Streaming Logs 
+### Monitoring while Running ###
+Monitoring is done to the Azure Web Jobs dashboard and is also visible via Azure WebSite's Streaming Logs 
 
 
 
@@ -33,6 +35,8 @@ Reporting is done to the Azure Web Jobs dashboard and is also visible via Azure 
 - Streaming Logs: [Enable diagnostic logging for Azure Websites](http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/).
 
 The easiest way is just go the the [Azure Portal](https://portal.azure.com) or use Visual Studio Azure Explorer - which comes with the Azure Tools for Visual Studio.
+
+See the [Quick Setup](QuickSetup.md) guide for more information.
 
 ---
 
