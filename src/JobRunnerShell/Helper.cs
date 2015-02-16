@@ -23,30 +23,33 @@ namespace Dx.Ted.Azure
             var msg1 = string.Format("Exception Occured: {0}", ex.Message);
             var msg2 = string.Format("EX type: {0}", ex.GetType().ToString());
 
-            Console.Error.WriteLine("ERROR: " + msg1);
-            Console.Error.WriteLine("ERROR: " + msg2);
-            Console.WriteLine("ERROR: " + msg1);
-            Console.WriteLine("ERROR: " + msg2);
-            Trace.TraceError(msg1);
-            Trace.TraceError(msg2);
+            LogErrorMessage(msg1, writer);
+            LogErrorMessage(msg2, writer);
 
-            LogMessage(msg1, writer);
         }
-
-        //public static void LogMessage(string message)
-        //{
-        //    LogMessage(message, null);
-        //}
 
         public static void LogMessage(string message, TextWriter writer)
         {
-            var msg1 = string.Format("NOT AN ERROR: {0}", message);
+            var msg1 = string.Format("[INFO] {0}", message);
 
             Console.WriteLine(msg1);
-            Trace.TraceError(msg1);
+            Trace.TraceInformation(msg1);
 
             if (null != writer)
                 writer.WriteLine(msg1);
+        }
+
+        public static void LogErrorMessage(string message, TextWriter writer)
+        {
+            var msg = "[ERROR] " + message;
+
+            Trace.TraceError(msg);
+            Console.Error.WriteLine(msg);
+            Console.WriteLine(msg);
+
+            if (null != writer)
+                writer.WriteLine(msg);
+
         }
     }
 

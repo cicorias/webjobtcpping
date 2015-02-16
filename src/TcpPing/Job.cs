@@ -19,7 +19,7 @@ namespace TcpPing
         public static void RunCalls(TextWriter writer)
         {
             var shutdownFile = Environment.GetEnvironmentVariable("WEBJOBS_SHUTDOWN_FILE");
-            var msg = string.Format("NOT ERROR2:  Will be watching file: {0}", shutdownFile);
+            var msg = string.Format("(from job) Will be watching file: {0}", shutdownFile);
             Helper.LogMessage(msg, writer);
 
             string ip;
@@ -58,7 +58,7 @@ namespace TcpPing
             {
                 s_totalErrors++;
                 ex.LogException(writer);
-                Helper.LogMessage(
+                Helper.LogErrorMessage(
                     LongMessage(),
                     writer);
             }
@@ -133,7 +133,7 @@ namespace TcpPing
             {
                 s_totalErrors++;
                 ex.LogException(writer);
-                Helper.LogMessage(
+                Helper.LogErrorMessage(
                     LongMessage(),
                     writer);
             }

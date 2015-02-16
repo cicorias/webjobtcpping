@@ -23,20 +23,20 @@ namespace Dx.Ted.Azure
         {
             if (null == method)
             {
-                Helper.LogMessage("invalid method supplied", null);
+                Helper.LogErrorMessage("invalid method supplied", null);
                 throw new ArgumentNullException("method");
             }
 
 
             var host = new JobHost();
             SetupShutdown();
-            
+
             Helper.LogMessage(
                 string.Format(
-                "JobHost starting up {0}", 
-                method.DeclaringType.FullName), 
+                "JobHost starting up {0}",
+                method.DeclaringType.FullName),
                 null);
-            
+
             try
             {
                 host.Call(method);
@@ -53,7 +53,7 @@ namespace Dx.Ted.Azure
             // Get the shutdown file path from the environment
             _shutdownFile = Environment.GetEnvironmentVariable("WEBJOBS_SHUTDOWN_FILE");
 
-            var msg = string.Format("NOT ERROR: Will be watching file: {0}", _shutdownFile);
+            var msg = string.Format("Will be watching file: {0}", _shutdownFile);
 
             Helper.LogMessage("Shutdown File(in watcher): " + msg, null);
 
