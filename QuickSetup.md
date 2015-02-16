@@ -56,3 +56,12 @@ During the job run the logs will be shown normally as errors - this is just a di
 
 #### Error showing Socket Exception ####
 ![](images/logerror.jpg?raw=true)
+
+#### Viewing Logfiles in Blob Storage ####
+![](images/logfiles.jpg?raw=true)
+
+#### Error showing Socket Exception ####
+![](images/logerror.jpg?raw=true)
+
+#### Viewing Streaming Logs via PowerShell ####
+![](images/isestreaming.jpg?raw=true)

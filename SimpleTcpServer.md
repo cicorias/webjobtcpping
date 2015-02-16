@@ -22,5 +22,6 @@ Make use of the ["InstallUtil.exe"](https://msdn.microsoft.com/en-us/library/506
 
   * **%SystemRoot%\Microsoft.NET\Framework64\v4.0.XXXX**
 
+The Service Name is "**Simple Server**"
 
 The service is marked as "**Manual Start**" and uses "**Network Service**" as the default.
