@@ -30,7 +30,7 @@ namespace SimpleTcpServer
 
             var server = new TcpServer(portInt);
 
-            Console.WriteLine("Running on  http://localhost:" + port);
+            Console.WriteLine("Running on  tcp://localhost:" + port);
             Console.WriteLine("Press <Enter> to continue...");
             Console.ReadLine();
             server.Dispose();
